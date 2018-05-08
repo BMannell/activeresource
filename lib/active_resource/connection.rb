@@ -46,6 +46,11 @@ module ActiveResource
       @password = URI.parser.unescape(@site.password) if @site.password
     end
 
+    # Sets the default_path for remote service.
+    def default_path=(default_path)
+      @default_path = default_path
+    end
+
     # Set the proxy for remote service.
     def proxy=(proxy)
       @proxy = proxy.is_a?(URI) ? proxy : URI.parse(proxy)
